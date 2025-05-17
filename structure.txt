@@ -1,0 +1,143 @@
+modular-monolith-event-driven-architecture
+├── Dockerfile
+├── README.md
+├── database.sqlite
+├── docker-compose.postgresql.kafka.yml
+├── docker-compose.postgresql.redis.yml
+├── docker-compose.sqlite.kafka.yml
+├── docker-compose.sqlite.redis.yml
+├── eslint.config.mjs
+├── logs
+│   └── application-2025-05-17.log
+├── nest-cli.json
+├── package-lock.json
+├── package.json
+├── sample.env
+├── src
+│   ├── app.controller.spec.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── common
+│   │   ├── decorators
+│   │   │   └── user.decorator.ts
+│   │   ├── filters
+│   │   │   └── http-exceptions.filter.ts
+│   │   ├── guards
+│   │   │   └── jwt-auth.guard.ts
+│   │   └── interceptors
+│   │       └── response.interceptor.ts
+│   ├── config
+│   │   └── config.module.ts
+│   ├── core
+│   │   ├── exceptions
+│   │   │   └── base-exception.ts
+│   │   └── utils
+│   │       └── uuid.util.ts
+│   ├── infra
+│   │   ├── database
+│   │   │   ├── database.factory.ts
+│   │   │   ├── database.module.ts
+│   │   │   ├── database.mysql.ts
+│   │   │   ├── database.postgresql.ts
+│   │   │   └── database.sqlite.ts
+│   │   ├── event-bus
+│   │   │   ├── brokers
+│   │   │   │   ├── in-memory.bus.ts
+│   │   │   │   ├── kafka.bus.ts
+│   │   │   │   ├── redis.bus.ts
+│   │   │   │   └── redisStream.bus.ts
+│   │   │   ├── event-bus.factory.ts
+│   │   │   ├── event-bus.interface.ts
+│   │   │   ├── event-bus.module.ts
+│   │   │   ├── event-bus.service.ts
+│   │   │   ├── event.ts
+│   │   │   ├── handler.decorator.ts
+│   │   │   └── handler.registry.ts
+│   │   └── logger
+│   │       ├── logger.module.ts
+│   │       └── logger.service.ts
+│   ├── main.ts
+│   └── modules
+│       ├── auth
+│       │   ├── auth.module.ts
+│       │   ├── auth.service.ts
+│       │   └── jwt.strategy.ts
+│       ├── notifications
+│       │   ├── application
+│       │   │   ├── facades
+│       │   │   │   └── notification.facade.service.ts
+│       │   │   ├── handlers
+│       │   │   │   └── user-created.handler.ts
+│       │   │   └── services
+│       │   │       └── notification.service.ts
+│       │   ├── infra
+│       │   │   └── providers
+│       │   │       ├── email
+│       │   │       │   ├── console-email.provider.ts
+│       │   │       │   └── email.provider.interface.ts
+│       │   │       └── provider.factory.ts
+│       │   └── notifications.module.ts
+│       ├── product
+│       │   ├── application
+│       │   │   ├── dtos
+│       │   │   │   ├── create-product.dto.ts
+│       │   │   │   ├── index.ts
+│       │   │   │   └── update-product.dto.ts
+│       │   │   ├── facades
+│       │   │   │   └── product.facade.service.ts
+│       │   │   └── services
+│       │   │       └── product.service.ts
+│       │   ├── domain
+│       │   │   ├── entities
+│       │   │   │   └── product.entity.ts
+│       │   │   ├── interfaces
+│       │   │   │   └── product.repository.interface.ts
+│       │   │   └── value-objects
+│       │   │       └── product-id.vo.ts
+│       │   ├── infra
+│       │   │   ├── repositories
+│       │   │   │   └── product.repository.impl.ts
+│       │   │   └── typeorm
+│       │   │       └── entities
+│       │   │           └── product.orm-entity.ts
+│       │   ├── interfaces
+│       │   │   └── product.controller.ts
+│       │   └── product.module.ts
+│       └── user
+│           ├── application
+│           │   ├── dtos
+│           │   │   ├── create-user.dto.ts
+│           │   │   ├── index.ts
+│           │   │   ├── login.dto.ts
+│           │   │   ├── register.dto.ts
+│           │   │   └── update-user.dto.ts
+│           │   ├── events
+│           │   │   └── account-created.event.ts
+│           │   ├── facades
+│           │   │   └── user.facades.service.ts
+│           │   └── services
+│           │       └── user.service.ts
+│           ├── domain
+│           │   ├── entities
+│           │   │   └── user.entity.ts
+│           │   ├── interfaces
+│           │   │   └── user.repository.interface.ts
+│           │   └── value-objects
+│           │       └── user-id.vo.ts
+│           ├── infra
+│           │   ├── repositories
+│           │   │   └── user.repository.impl.ts
+│           │   └── typeorm
+│           │       └── entities
+│           │           └── user.orm-entity.ts
+│           ├── interfaces
+│           │   ├── auth.controller.ts
+│           │   └── user.controller.ts
+│           └── user.module.ts
+├── structure.txt
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── tsconfig.build.json
+└── tsconfig.json

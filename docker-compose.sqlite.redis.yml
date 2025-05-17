@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nestjs-app
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_TYPE: sqlite
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USERNAME:
+      DB_PASSWORD:
+      DB_NAME: database.sqlite
+      JWT_SECRET: your-secret-key
+      REDIS_URL: redis://redis:6379
+      EVENT_BUS_TYPE: redis
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
