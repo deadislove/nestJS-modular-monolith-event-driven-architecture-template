@@ -24,10 +24,6 @@
 ![Visitors](https://img.shields.io/badge/visitors-0_total-brightgreen)
 ![Clones](https://img.shields.io/badge/clones-0_total_0_unique-blue) <!--CLONE-BADGE-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
 ## 🌍 Project Overview
 
 This project demonstrates a modular monolith architecture incorporating event-driven communication patterns. It is designed to serve as a scalable, maintainable backend foundation for complex applications. Leveraging [NestJS](https://github.com/nestjs/nest), the app implements factory patterns for database and event bus providers, supporting PostgreSQL, MySQL, SQLite, Redis, Kafka, and in-memory solutions. The system is containerized using Docker and supports deployment on orchestration platforms such as Docker Cloud or Kubernetes.
